@@ -38,18 +38,7 @@ const TechStack = () => {
         <div className="techstack-grid" ref={gridRef}>
           {techStackData.map((tech, index) => (
             <div key={index} className="tech-card glass glass-hover">
-              <div className="tech-icon">{tech.icon}</div>
               <h3 className="tech-name">{tech.name}</h3>
-              <span className="tech-category">{tech.category}</span>
-              <div className="tech-proficiency">
-                <div className="proficiency-bar">
-                  <div 
-                    className="proficiency-fill"
-                    style={{ '--proficiency': `${tech.proficiency}%` }}
-                  ></div>
-                </div>
-                <span className="proficiency-text">{tech.proficiency}%</span>
-              </div>
             </div>
           ))}
         </div>

@@ -15,19 +15,23 @@
 
 .techstack-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
   margin-top: 3rem;
 }
 
 .tech-card {
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
   opacity: 0;
   transform: translateY(30px) scale(0.9);
   transition: var(--transition-smooth);
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .tech-card.animate-in {
@@ -58,9 +62,10 @@
 }
 
 .tech-name {
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  margin: 0;
   color: var(--text-primary);
+  font-weight: 600;
 }
 
 .tech-category {
@@ -132,15 +137,22 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .techstack-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
   }
   
   .tech-card {
-    padding: 1.5rem;
+    padding: 0.8rem;
+    min-height: 50px;
   }
   
-  .tech-icon {
-    font-size: 2.5rem;
+  .tech-name {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .techstack-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

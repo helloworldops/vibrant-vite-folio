@@ -4,31 +4,31 @@ const Contacts = () => {
   const contacts = [
     {
       name: 'GitHub',
-      icon: '💻',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg',
       url: 'https://github.com/username',
       color: '#333'
     },
     {
       name: 'LinkedIn',
-      icon: '💼',
+      logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg',
       url: 'https://linkedin.com/in/username',
       color: '#0077b5'
     },
     {
       name: 'LeetCode',
-      icon: '🧩',
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png',
       url: 'https://leetcode.com/username',
       color: '#ffa116'
     },
     {
       name: 'GeeksforGeeks',
-      icon: '🚀',
+      logo: 'https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png',
       url: 'https://auth.geeksforgeeks.org/user/username',
       color: '#0f9d58'
     },
     {
       name: 'Email',
-      icon: '✉️',
+      logo: 'https://cdn-icons-png.flaticon.com/512/732/732200.png',
       url: 'mailto:your.email@example.com',
       color: '#ea4335'
     }
@@ -50,18 +50,21 @@ const Contacts = () => {
               href={contact.url}
               target={contact.name === 'Email' ? '_self' : '_blank'}
               rel="noopener noreferrer"
-              className="contact-card glass glass-hover"
+              className="contact-link"
               style={{ '--contact-color': contact.color }}
             >
-              <div className="contact-icon">{contact.icon}</div>
-              <div className="contact-name">{contact.name}</div>
-              <div className="contact-glow"></div>
+              <img 
+                src={contact.logo}
+                alt={`${contact.name} logo`}
+                className="contact-logo"
+              />
+              <span className="contact-name">{contact.name}</span>
             </a>
           ))}
         </div>
         <div className="contacts-footer">
           <p className="footer-text">
-            © 2024 Alex Johnson. Built with React & lots of ☕
+            Always ready to learn and connect 🚀
           </p>
         </div>
       </div>
