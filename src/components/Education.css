@@ -1,0 +1,152 @@
+.education {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.01) 0%, transparent 100%);
+}
+
+.education-header {
+  margin-bottom: 4rem;
+}
+
+.education-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.education-card {
+  position: relative;
+  padding: 2.5rem;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.education-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+.education-score-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(240, 147, 251, 0.3);
+}
+
+.education-content {
+  position: relative;
+  z-index: 2;
+}
+
+.education-duration {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: rgba(240, 147, 251, 0.1);
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(240, 147, 251, 0.2);
+}
+
+.education-course {
+  font-size: 1.4rem;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.education-institute {
+  font-size: 1.1rem;
+  color: #f093fb;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.education-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.education-gradient-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+  border-radius: 16px;
+  padding: 2px;
+  z-index: -1;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.education-gradient-border::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: 14px;
+}
+
+.education-card:hover .education-gradient-border {
+  opacity: 1;
+}
+
+.education-card:hover .education-score-badge {
+  transform: scale(1.1) rotate(-5deg);
+  box-shadow: 0 6px 20px rgba(240, 147, 251, 0.5);
+}
+
+/* Staggered Animation */
+.education-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.education-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.education-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .education-card {
+    padding: 2rem;
+    margin: 0 1rem;
+  }
+  
+  .education-score-badge {
+    position: static;
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+  
+  .education-course {
+    font-size: 1.2rem;
+  }
+}

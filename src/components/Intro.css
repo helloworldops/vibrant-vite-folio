@@ -1,0 +1,122 @@
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+}
+
+.intro-content {
+  max-width: 800px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: var(--transition-smooth);
+}
+
+.intro-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-image-container {
+  margin-bottom: 2rem;
+  display: inline-block;
+}
+
+.intro-image {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  transition: var(--transition-bounce);
+}
+
+.intro-image:hover {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.4), var(--glass-shadow);
+}
+
+.intro-title {
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  }
+  100% {
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+  }
+}
+
+.intro-description {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-highlights {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.highlight-item {
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  cursor: default;
+}
+
+.highlight-item:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: var(--hover-glow), var(--glass-shadow);
+}
+
+.highlight-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.highlight-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.highlight-item:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 2.5rem;
+  }
+  
+  .intro-description {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .intro-highlights {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .highlight-item {
+    width: 80%;
+    text-align: center;
+  }
+}
